@@ -1,0 +1,22 @@
+$def with (todos, form)
+
+<table>
+    <tr>
+        <th>What to do ?</th>
+        <th></th>
+    </tr>
+$for d in range(0,len(todos)):
+    <tr>
+            <td>$todos[d][u'id']</td>
+            <td>$todos[d][u'name']</td>
+        <td>
+            <form action="/del/$$todos[d][u'id']" method="post">            
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>    
+</table>  
+
+<form action="" method="post">
+$:form.render()
+</form>
